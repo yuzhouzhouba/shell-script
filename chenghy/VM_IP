@@ -1,0 +1,2 @@
+#!/bin/bash
+arp-scan 192.168.79.0/24 | grep -i $1

@@ -1,0 +1,33 @@
+++[#4 main() /etc/qemu-ifup] brctl show
+++[#4 main() /etc/qemu-ifup] sed -n 2p
+++[#4 main() /etc/qemu-ifup] awk '{print $1}'
++[#4 main() /etc/qemu-ifup] switch=sw0
++[#6 main() /etc/qemu-ifup] '[' -n tap0 ']'
+++[#7 main() /etc/qemu-ifup] whoami
++[#7 main() /etc/qemu-ifup] tunctl -u root -t tap0
+TUNSETIFF: Device or resource busy
++[#8 main() /etc/qemu-ifup] ip link set tap0 up
++[#9 main() /etc/qemu-ifup] sleep 0.5s
++[#10 main() /etc/qemu-ifup] brctl addif sw0 tap0
++[#11 main() /etc/qemu-ifup] exit 0
+set vendor id(8086) for devfn(0)
+set vendor id(8086) for devfn(8)
+vgt: vendor: 0x8086, device: 0x9cc3, revision: 0x3
+set vendor id(0) for devfn(f8)
+Create vgt ISA bridge successfully
+set vendor id(0) for devfn(10)
+vgt: vgt_initfn
+vgt: kvm_domid is 3
+Create vgt VGA successfully
+set vendor id(8086) for devfn(18)
+set vendor id(8086) for devfn(9)
+vgt: opregion:bfffc000
+set vendor id(8086) for devfn(a)
+set vendor id(8086) for devfn(b)
+egl extensions found. Intel GVT-g indirect display will be enabled
+Use flink to get guest framebuffer
+post_finished: false -> true!
+vgt_bridge_pci_conf_init
+vendor id: 8086
+device id: 1604
+/etc/qemu-ifdown: could not launch network script

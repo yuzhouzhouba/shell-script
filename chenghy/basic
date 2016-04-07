@@ -1,0 +1,5 @@
+#!/bin/sh
+/usr/bin/qemu-system-x86_64 -m $1 -smp 2 -M pc -name kvmgt$2 -hda $3 -enable-kvm -net nic,macaddr=$4 -net tap,script=/etc/qemu-ifup -bios /usr/bin/bios.bin -vgt -vga vgt -display sdl -machine kernel_irqchip=on -vgt_high_gm_sz $5 -vgt_low_gm_sz $6 -vgt_fence_sz $7 -cpu host -usb -usbdevice tablet  -hdb $8 #-vnc :1
+
+
+
